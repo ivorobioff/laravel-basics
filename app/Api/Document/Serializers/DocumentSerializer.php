@@ -16,6 +16,7 @@ class DocumentSerializer extends Serializer
             'format' => $document->getFormat(),
             'name' => $document->getName(),
             'url' => $this->url($document->getUri()),
+            'size' => $document->getSize(),
             'uploadedAt' => $this->datetime($document->getUploadedAt())
         ];
     }

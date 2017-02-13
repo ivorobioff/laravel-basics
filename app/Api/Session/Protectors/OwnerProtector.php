@@ -17,7 +17,7 @@ class OwnerProtector extends AbstractOwnerProtector
         /**
          * @var UserService $userService
          */
-        $userService = $this->container->get(UserService::class);
+        $userService = $this->container->make(UserService::class);
 
         return $userService->hasSession($this->session->getUser()->getId(), $id);
     }

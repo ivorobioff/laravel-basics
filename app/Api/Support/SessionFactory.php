@@ -19,7 +19,7 @@ class SessionFactory
         /**
          * @var Request $request
          */
-        $request = $container->get(Request::class);
+        $request = $container->make(Request::class);
 
         $token = $request->header('Token')[0] ?? null;
 
@@ -30,7 +30,7 @@ class SessionFactory
         /**
          * @var SessionService $sessionService
          */
-        $sessionService = $container->get(SessionService::class);
+        $sessionService = $container->make(SessionService::class);
 
         return ($sessionService->getNotExpiredByToken($token) ?? new Session());
     }

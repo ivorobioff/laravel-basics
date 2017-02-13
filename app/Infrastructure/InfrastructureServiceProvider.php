@@ -1,7 +1,6 @@
 <?php
 namespace ImmediateSolutions\Infrastructure;
 
-
 use ImmediateSolutions\Core\Document\Interfaces\DocumentPreferenceInterface;
 use ImmediateSolutions\Core\Document\Interfaces\StorageInterface;
 use ImmediateSolutions\Core\Session\Interfaces\SessionPreferenceInterface;
