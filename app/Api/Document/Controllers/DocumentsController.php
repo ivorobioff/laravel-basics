@@ -1,10 +1,10 @@
 <?php
 namespace ImmediateSolutions\Api\Document\Controllers;
+use Illuminate\Http\Response;
 use ImmediateSolutions\Api\Document\Processors\DocumentsProcessor;
 use ImmediateSolutions\Api\Document\Serializers\DocumentSerializer;
 use ImmediateSolutions\Api\Support\Controller;
 use ImmediateSolutions\Core\Document\Services\DocumentService;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
@@ -26,7 +26,7 @@ class DocumentsController extends Controller
 
     /**
      * @param DocumentsProcessor $processor
-     * @return ResponseInterface
+     * @return Response
      */
     public function store(DocumentsProcessor $processor)
     {

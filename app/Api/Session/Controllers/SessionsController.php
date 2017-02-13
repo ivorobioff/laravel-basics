@@ -1,11 +1,11 @@
 <?php
 namespace ImmediateSolutions\Api\Session\Controllers;
+use Illuminate\Http\Response;
 use ImmediateSolutions\Api\Session\Processors\CredentialsProcessor;
 use ImmediateSolutions\Api\Session\Serializers\SessionSerializer;
 use ImmediateSolutions\Api\Support\Controller;
 use ImmediateSolutions\Core\Session\Services\SessionService;
 use ImmediateSolutions\Core\User\Services\UserService;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
@@ -33,7 +33,7 @@ class SessionsController extends Controller
 
     /**
      * @param CredentialsProcessor $processor
-     * @return ResponseInterface
+     * @return Response
      */
     public function store(CredentialsProcessor $processor)
     {
@@ -44,7 +44,7 @@ class SessionsController extends Controller
 
     /**
      * @param $sessionId
-     * @return ResponseInterface
+     * @return Response
      */
     public function refresh($sessionId)
     {
@@ -55,7 +55,7 @@ class SessionsController extends Controller
 
     /**
      * @param int $sessionId
-     * @return ResponseInterface
+     * @return Response
      */
     public function show($sessionId)
     {
@@ -66,7 +66,7 @@ class SessionsController extends Controller
 
     /**
      * @param int $sessionId
-     * @return ResponseInterface
+     * @return Response
      */
     public function destroy($sessionId)
     {

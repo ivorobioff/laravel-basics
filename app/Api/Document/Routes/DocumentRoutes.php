@@ -1,7 +1,7 @@
 <?php
 namespace ImmediateSolutions\Api\Document\Routes;
-use Illuminate\Routing\Router;
 use ImmediateSolutions\Api\Document\Controllers\DocumentsController;
+use ImmediateSolutions\Support\Routing\Router;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
