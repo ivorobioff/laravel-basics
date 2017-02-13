@@ -99,7 +99,7 @@ class EntityManagerFactory
     private function registerTypes(Connection $connection, array $packages, array $extra = [])
     {
         foreach ($packages as $package) {
-            $path = app_path('/Infrastructure/DAL/' . str_replace('\\', '/', $package) . '/Types');
+            $path = app_path('Infrastructure/DAL/' . str_replace('\\', '/', $package) . '/Types');
             $typeNamespace = 'ImmediateSolutions\Infrastructure\DAL\\' . $package . '\Types';
 
             if (! file_exists($path)) {

@@ -28,8 +28,6 @@ class InfrastructureServiceProvider extends ServiceProvider
         $this->app->singleton(SessionPreferenceInterface::class, SessionPreference::class);
         $this->app->singleton(DocumentPreferenceInterface::class, DocumentPreference::class);
         $this->app->singleton(ContainerInterface::class, Container::class);
-        $this->app->singleton(LoggerInterface::class, function(){
-            return $this->app->make('log');
-        });
+        $this->app->alias('log', LoggerInterface::class);
     }
 }

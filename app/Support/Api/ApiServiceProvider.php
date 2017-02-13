@@ -14,6 +14,6 @@ class ApiServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->instance(ResponseFactoryInterface::class, JsonResponseFactory::class);
+        $this->app->bind(ResponseFactoryInterface::class, JsonResponseFactory::class);
     }
 }

@@ -88,7 +88,7 @@ class PackageDriver implements MappingDriver, MetadataClassesProvidableInterface
     private function searchMetadataClasses($target)
     {
         foreach ($this->packages as $package) {
-            $path = APP_PATH.'/src/Core/' . str_replace('\\', '/', $package) . '/' . $target;
+            $path = app_path('Core/' . str_replace('\\', '/', $package) . '/' . $target);
             $entityNamespace = 'ImmediateSolutions\\Core\\' . $package . '\\' . $target;
             $metadataNamespace = 'ImmediateSolutions\Infrastructure\DAL\\' . $package . '\Metadata';
 

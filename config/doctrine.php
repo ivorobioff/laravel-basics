@@ -9,11 +9,11 @@ return [
     'connections' => [
         'default' => [
             'driver' => 'pdo_mysql',
-            'user' => $this->parameter('database.username'),
-            'password' => $this->parameter('database.password'),
-            'dbname' => $this->parameter('database.name'),
+            'user' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
+            'dbname' => env('DB_DATABASE'),
             'charset' => 'utf8',
-            'host' => $this->parameter('database.host')
+            'host' => 'localhost'
         ]
     ],
 

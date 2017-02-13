@@ -10,22 +10,16 @@ use ImmediateSolutions\Support\Validation\ErrorsThrowableCollection;
 use ImmediateSolutions\Support\Validation\PresentableException;
 use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Illuminate\Config\Repository as Config;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
  */
-class ExceptionHandler extends Handler
+abstract class ExceptionHandler extends Handler
 {
     /**
      * @var ResponseFactoryInterface
      */
     private $responseFactory;
-
-    /**
-     * @var Config
-     */
-    private $config;
 
     /**
      * @var array
@@ -42,7 +36,6 @@ class ExceptionHandler extends Handler
     {
         parent::__construct($container);
         $this->responseFactory = $container->make(ResponseFactoryInterface::class);
-        $this->config = $container->make(Config::class);
     }
 
     /**
@@ -74,13 +67,11 @@ class ExceptionHandler extends Handler
             return $this->writeException(400, $exception->getMessage());
         }
 
-        if ($this->config->get('app.debug')){
-            $message = (string) $exception;
-        } else {
-            $message = 'Internal Server Error';
+        if ($this->isDebug()){
+            return parent::render($request, $exception);
         }
 
-        return $this->writeException(500, $message);
+        return $this->writeException(500, 'Internal Server Error');
     }
 
     /**
@@ -89,7 +80,7 @@ class ExceptionHandler extends Handler
      */
     private function writeHttpException(HttpException $exception)
     {
-        return $this->writeException($exception->getCode(), $exception->getMessage());
+        return $this->writeException($exception->getStatusCode(), $exception->getMessage());
     }
 
     /**
@@ -125,5 +116,13 @@ class ExceptionHandler extends Handler
         }
 
         return $data;
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isDebug()
+    {
+        return false;
     }
 }

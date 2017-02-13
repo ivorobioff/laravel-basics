@@ -1,9 +1,9 @@
 <?php
 namespace ImmediateSolutions\Api;
+use Illuminate\Routing\Router;
 use ImmediateSolutions\Api\Document\Routes\DocumentRoutes;
 use ImmediateSolutions\Api\Session\Routes\SessionRoutes;
 use ImmediateSolutions\Support\Routing\Router as Proxy;
-use ImmediateSolutions\Support\Routing\Router;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
@@ -11,7 +11,7 @@ use ImmediateSolutions\Support\Routing\Router;
 class RouteServiceProvider extends \Illuminate\Foundation\Support\Providers\RouteServiceProvider
 {
     /**
-     * @param Router $proxy
+     * @param Proxy $proxy
      */
     private function define(Proxy $proxy)
     {
