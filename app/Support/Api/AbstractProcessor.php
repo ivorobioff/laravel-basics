@@ -18,6 +18,9 @@ use ImmediateSolutions\Support\Validation\Rules\StringCast;
 use ImmediateSolutions\Support\Validation\Rules\Walk;
 use ImmediateSolutions\Support\Validation\Source\ArraySourceHandler;
 use RuntimeException;
+use ImmediateSolutions\Support\Validation\Source\ClearableAwareInterface;
+use Symfony\Component\PropertyAccess\PropertyAccess;
+use Closure;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
@@ -51,6 +54,50 @@ abstract class AbstractProcessor
     {
         $this->container = $container;
         $this->request = $container->make(Request::class);
+    }
+
+    /**
+     * @param $object
+     * @param $property
+     * @param callable $modifier
+     * @param bool $nullable
+     */
+    protected function set($object, $property, callable $modifier = null, $nullable = true)
+    {
+        if (!$this->has($property)){
+            return ;
+        }
+
+        $accessor = PropertyAccess::createPropertyAccessor();
+
+        $value = $this->get($property);
+
+        if ($modifier !== null){
+            $value = $modifier($value);
+        }
+
+        if ($nullable || $value !== null){
+            $accessor->setValue($object, $property, $value);
+        }
+
+        if ($nullable && $value === null && $object instanceof ClearableAwareInterface){
+            $object->addClearable($property);
+        }
+    }
+
+    /**
+     * @param string $class
+     * @return Closure
+     */
+    protected function asEnum($class)
+    {
+        return function($value) use ($class){
+            if ($value === null){
+                return null;
+            }
+
+            return new $class($value);
+        };
     }
 
     /**

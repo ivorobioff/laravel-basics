@@ -172,7 +172,6 @@ return [
          * Application Service Providers...
          */
         ImmediateSolutions\Infrastructure\InfrastructureServiceProvider::class,
-        ImmediateSolutions\Support\Api\ApiServiceProvider::class,
         ImmediateSolutions\Api\RouteServiceProvider::class,
         ImmediateSolutions\Api\ApiServiceProvider::class,
         ImmediateSolutions\Support\Api\Verify\VerifyServiceProvider::class,

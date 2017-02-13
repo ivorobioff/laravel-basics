@@ -1,6 +1,6 @@
 <?php
-namespace ImmediateSolutions\Infrastructure;
-use ImmediateSolutions\Core\User\Interfaces\PasswordEncryptorInterface;
+namespace ImmediateSolutions\Support\Infrastructure;
+use ImmediateSolutions\Support\Core\Interfaces\PasswordEncryptorInterface;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>

@@ -6,14 +6,21 @@ namespace ImmediateSolutions\Support\Routing;
  */
 class Router extends \Illuminate\Routing\Router
 {
-    private $aliases = [];
+    /**
+     * @var array
+     */
+    private $aliases;
 
     /**
-     * @param array $aliases
+     * @return array
      */
-    public function setAliases(array $aliases)
+    public function getAliases()
     {
-        $this->aliases = $aliases;
+        if ($this->aliases === null){
+            $this->aliases = $this->container->make('config')->get('app.routing.patterns', []);
+        }
+
+        return $this->aliases;
     }
 
     /**
@@ -27,7 +34,7 @@ class Router extends \Illuminate\Routing\Router
     protected function newRoute($methods, $uri, $action)
     {
         $route = new Route($methods, $uri, $action);
-        $route->setAliases($this->aliases);
+        $route->setAliases($this->getAliases());
         $route->setContainer($this->container);
         return $route;
     }

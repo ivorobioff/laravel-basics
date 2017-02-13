@@ -1,5 +1,5 @@
 <?php
-namespace ImmediateSolutions\Infrastructure\Doctrine\Metadata;
+namespace ImmediateSolutions\Support\Infrastructure\Doctrine\Metadata;
 
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
 

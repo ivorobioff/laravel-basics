@@ -1,5 +1,6 @@
 <?php
 namespace ImmediateSolutions\Infrastructure;
+use Illuminate\Contracts\Container\Container;
 use ImmediateSolutions\Core\Document\Interfaces\DocumentPreferenceInterface;
 
 /**
@@ -8,14 +9,14 @@ use ImmediateSolutions\Core\Document\Interfaces\DocumentPreferenceInterface;
 class DocumentPreference implements DocumentPreferenceInterface
 {
     /**
-     * @var ConfigInterface
+     * @var Container
      */
     private $config;
 
     /**
-     * @param ConfigInterface $config
+     * @param Container $config
      */
-    public function __construct(ConfigInterface $config)
+    public function __construct(Container $config)
     {
         $this->config = $config;
     }

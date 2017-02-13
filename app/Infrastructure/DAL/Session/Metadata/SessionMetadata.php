@@ -2,7 +2,7 @@
 namespace ImmediateSolutions\Infrastructure\DAL\Session\Metadata;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
 use ImmediateSolutions\Core\User\Entities\User;
-use ImmediateSolutions\Infrastructure\Doctrine\Metadata\AbstractMetadataProvider;
+use ImmediateSolutions\Support\Infrastructure\Doctrine\Metadata\AbstractMetadataProvider;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>

@@ -24,8 +24,10 @@ class PermissionsServiceProvider extends ServiceProvider
              */
             $config = $this->app->make(Config::class);
 
-            $permission = new Permissions($this->app);
-            $permission->globals($config->get('app.protectors', []));
+            $permissions = new Permissions($this->app);
+            $permissions->globals($config->get('app.protectors', []));
+
+            return $permissions;
         });
     }
 

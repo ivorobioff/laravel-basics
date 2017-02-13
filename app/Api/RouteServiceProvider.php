@@ -32,7 +32,6 @@ class RouteServiceProvider extends \Illuminate\Foundation\Support\Providers\Rout
          * @var Proxy $proxy
          */
         $proxy = $this->app->make(Proxy::class);
-        $proxy->setAliases($this->app->make('config')->get('app.routing.patterns', []));
 
         $this->define($proxy);
 

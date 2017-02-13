@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
  */
-abstract class ExceptionHandler extends Handler
+class ExceptionHandler extends Handler
 {
     /**
      * @var ResponseFactoryInterface
@@ -123,6 +123,6 @@ abstract class ExceptionHandler extends Handler
      */
     protected function isDebug()
     {
-        return false;
+        return $this->container->make('config')->get('app.debug');
     }
 }

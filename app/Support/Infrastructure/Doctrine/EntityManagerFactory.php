@@ -1,5 +1,5 @@
 <?php
-namespace ImmediateSolutions\Infrastructure\Doctrine;
+namespace ImmediateSolutions\Support\Infrastructure\Doctrine;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Illuminate\Contracts\Container\Container;
@@ -8,11 +8,11 @@ use Doctrine\ORM\Configuration;
 use Doctrine\DBAL\Types\Type;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
-use ImmediateSolutions\Infrastructure\Doctrine\Metadata\SimpleDriver;
+use ImmediateSolutions\Support\Infrastructure\Doctrine\Metadata\SimpleDriver;
 use Doctrine\ORM\Mapping\UnderscoreNamingStrategy;
 use Doctrine\ORM\Tools\Setup;
-use ImmediateSolutions\Infrastructure\Doctrine\Metadata\CompositeDriver;
-use ImmediateSolutions\Infrastructure\Doctrine\Metadata\PackageDriver;
+use ImmediateSolutions\Support\Infrastructure\Doctrine\Metadata\CompositeDriver;
+use ImmediateSolutions\Support\Infrastructure\Doctrine\Metadata\PackageDriver;
 use DoctrineExtensions\Query\Mysql\Year as MysqlYear;
 use DoctrineExtensions\Query\Sqlite\Year as SqliteYear;
 use DoctrineExtensions\Query\Mysql\Month as MysqlMonth;

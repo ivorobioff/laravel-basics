@@ -1,5 +1,5 @@
 <?php
-namespace ImmediateSolutions\Infrastructure\Doctrine;
+namespace ImmediateSolutions\Support\Infrastructure\Doctrine;
 
 use Doctrine\DBAL\Types\Type;
 

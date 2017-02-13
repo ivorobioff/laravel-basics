@@ -1,5 +1,5 @@
 <?php
-namespace ImmediateSolutions\Infrastructure\Doctrine\Metadata;
+namespace ImmediateSolutions\Support\Infrastructure\Doctrine\Metadata;
 
 use Doctrine\Common\Persistence\Mapping\ClassMetadata as ClassMetadataInterface;
 use Doctrine\Common\Persistence\Mapping\Driver\MappingDriver;

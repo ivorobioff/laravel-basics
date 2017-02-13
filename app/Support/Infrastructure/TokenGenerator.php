@@ -1,5 +1,5 @@
 <?php
-namespace ImmediateSolutions\Infrastructure;
+namespace ImmediateSolutions\Support\Infrastructure;
 use ImmediateSolutions\Support\Core\Interfaces\TokenGeneratorInterface;
 
 /**

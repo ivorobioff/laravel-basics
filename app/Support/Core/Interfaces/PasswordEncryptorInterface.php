@@ -1,5 +1,5 @@
 <?php
-namespace ImmediateSolutions\Core\User\Interfaces;
+namespace ImmediateSolutions\Support\Core\Interfaces;
 
 /**
  *

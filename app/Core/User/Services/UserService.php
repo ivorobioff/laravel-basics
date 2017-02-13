@@ -4,7 +4,7 @@ namespace ImmediateSolutions\Core\User\Services;
 use ImmediateSolutions\Core\Session\Entities\Session;
 use ImmediateSolutions\Core\Support\Service;
 use ImmediateSolutions\Core\User\Entities\User;
-use ImmediateSolutions\Core\User\Interfaces\PasswordEncryptorInterface;
+use ImmediateSolutions\Support\Core\Interfaces\PasswordEncryptorInterface;
 use ImmediateSolutions\Core\User\Payloads\CredentialsPayload;
 
 /**
