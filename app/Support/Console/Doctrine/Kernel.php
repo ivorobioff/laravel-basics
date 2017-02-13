@@ -1,5 +1,5 @@
 <?php
-namespace ImmediateSolutions\Console\Doctrine;
+namespace ImmediateSolutions\Support\Console\Doctrine;
 
 use Doctrine\DBAL\Migrations\Configuration\Configuration;
 use Doctrine\DBAL\Migrations\Tools\Console\Command\DiffCommand;

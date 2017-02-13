@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-use ImmediateSolutions\Console\Doctrine\Kernel;
+use ImmediateSolutions\Support\Console\Doctrine\Kernel;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
