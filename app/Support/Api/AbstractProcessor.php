@@ -57,8 +57,8 @@ abstract class AbstractProcessor
     }
 
     /**
-     * @param $object
-     * @param $property
+     * @param object $object
+     * @param string $property
      * @param callable $modifier
      * @param bool $nullable
      */
@@ -68,19 +68,23 @@ abstract class AbstractProcessor
             return ;
         }
 
-        $accessor = PropertyAccess::createPropertyAccessor();
-
         $value = $this->get($property);
+
+        if (!$nullable && $value === null){
+            return ;
+        }
+
+        $accessor = PropertyAccess::createPropertyAccessor();
 
         if ($modifier !== null){
             $value = $modifier($value);
         }
 
-        if ($nullable || $value !== null){
+        if ($value !== null){
             $accessor->setValue($object, $property, $value);
         }
 
-        if ($nullable && $value === null && $object instanceof ClearableAwareInterface){
+        if ($value === null && $object instanceof ClearableAwareInterface){
             $object->addClearable($property);
         }
     }
