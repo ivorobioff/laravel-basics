@@ -80,9 +80,7 @@ abstract class AbstractProcessor
             $value = $modifier($value);
         }
 
-        if ($value !== null){
-            $accessor->setValue($object, $property, $value);
-        }
+        $accessor->setValue($object, $property, $value);
 
         if ($value === null && $object instanceof ClearableAwareInterface){
             $object->addClearable($property);
