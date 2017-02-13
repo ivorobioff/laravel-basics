@@ -2,6 +2,7 @@
 namespace ImmediateSolutions\Infrastructure\DAL\User\Metadata;
 
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
+use ImmediateSolutions\Core\Client\Entities\Client;
 use ImmediateSolutions\Support\Infrastructure\Doctrine\Metadata\AbstractMetadataProvider;
 
 /**
@@ -18,7 +19,8 @@ class UserMetadata extends AbstractMetadataProvider
         $builder
             ->setTable('users')
             ->setSingleTableInheritance()
-            ->setDiscriminatorColumn('type', 'string', 20);
+            ->setDiscriminatorColumn('type', 'string', 20)
+            ->addDiscriminatorMapClass('client', Client::class);
 
         $builder
             ->createField('id', 'integer')

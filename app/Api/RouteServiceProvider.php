@@ -1,6 +1,7 @@
 <?php
 namespace ImmediateSolutions\Api;
 use Illuminate\Routing\Router;
+use ImmediateSolutions\Api\Client\Routes\ClientRoutes;
 use ImmediateSolutions\Api\Document\Routes\DocumentRoutes;
 use ImmediateSolutions\Api\Session\Routes\SessionRoutes;
 use ImmediateSolutions\Support\Routing\Router as Proxy;
@@ -17,6 +18,7 @@ class RouteServiceProvider extends \Illuminate\Foundation\Support\Providers\Rout
     {
         (new SessionRoutes())($proxy);
         (new DocumentRoutes())($proxy);
+        (new ClientRoutes())($proxy);
     }
 
     /**

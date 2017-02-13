@@ -21,7 +21,7 @@ class SessionFactory
          */
         $request = $container->make(Request::class);
 
-        $token = $request->header('Token')[0] ?? null;
+        $token = $request->header('Token');
 
         if (!$token){
             return new Session();

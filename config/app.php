@@ -231,7 +231,8 @@ return [
     'packages' => [
         'User',
         'Session',
-        'Document'
+        'Document',
+        'Client'
     ],
 
     'protectors' => [
