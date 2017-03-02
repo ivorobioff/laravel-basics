@@ -9,6 +9,7 @@
         "laravel/framework": "5.4.*",
         "immediate-solutions/laravel-support": "dev-master"
     },
+    "minimum-stability": "dev",
     "autoload": {
         "classmap": [
             "database"
