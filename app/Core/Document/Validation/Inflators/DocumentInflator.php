@@ -1,7 +1,6 @@
 <?php
 namespace ImmediateSolutions\Core\Document\Validation\Inflators;
 
-use Illuminate\Contracts\Container\Container;
 use ImmediateSolutions\Core\Document\Entities\Document;
 use ImmediateSolutions\Core\Document\Services\DocumentService;
 use ImmediateSolutions\Core\Document\Validation\Rules\DocumentExists;
@@ -16,7 +15,7 @@ use ImmediateSolutions\Support\Validation\Rules\Obligate;
 class DocumentInflator
 {
 	/**
-	 * @var Container $container
+	 * @var ContainerInterface $container
 	 */
 	protected $container;
 
