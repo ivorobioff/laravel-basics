@@ -174,7 +174,7 @@ return [
         ImmediateSolutions\Infrastructure\InfrastructureServiceProvider::class,
         ImmediateSolutions\Api\RouteServiceProvider::class,
         ImmediateSolutions\Api\ApiServiceProvider::class,
-        ImmediateSolutions\Support\Api\Verify\VerifyServiceProvider::class,
+        ImmediateSolutions\Support\Api\VerifyServiceProvider::class,
         ImmediateSolutions\Support\Permissions\PermissionsServiceProvider::class
     ],
 

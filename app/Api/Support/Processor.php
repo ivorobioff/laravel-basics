@@ -1,13 +1,12 @@
 <?php
 namespace ImmediateSolutions\Api\Support;
 use ImmediateSolutions\Core\Document\Payloads\IdentifierPayload;
-use ImmediateSolutions\Support\Api\AbstractProcessor;
 use Closure;
 
 /**
  * @author Igor Vorobiov<igor.vorobioff@gmail.com>
  */
-abstract class Processor extends AbstractProcessor
+abstract class Processor extends \ImmediateSolutions\Support\Api\Processor
 {
     /**
      * @return Closure
